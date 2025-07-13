@@ -34,7 +34,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      timeout-minutes: 1
+      timeout-minutes: 35
 
     # Create 6-month refresh key for dependency cache invalidation
     - name: Create semi-annual cache key
@@ -69,7 +69,7 @@ jobs:
 
     # Download only the log file from Dropbox
     - name: Download log file from Dropbox
-      timeout-minutes: 2
+      timeout-minutes: 35
       env:
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
