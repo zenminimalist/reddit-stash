@@ -29,7 +29,7 @@ concurrency:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    timeout-minutes: 25  # Kill job if it runs longer than 10 minutes
+    timeout-minutes: 35  # Kill job if it runs longer than 10 minutes
       
     steps:
     - name: Checkout repository
@@ -79,7 +79,7 @@ jobs:
 
     # Process Reddit data
     - name: Run Reddit Stash Script
-      timeout-minutes: 25
+      timeout-minutes: 35
       env:
         REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
         REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
