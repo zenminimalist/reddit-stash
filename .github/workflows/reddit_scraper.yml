@@ -90,7 +90,7 @@ jobs:
 
     # Upload any changed files to Dropbox
     - name: Upload updated data to Dropbox
-      timeout-minutes: 2
+      timeout-minutes: 35
       env:
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
