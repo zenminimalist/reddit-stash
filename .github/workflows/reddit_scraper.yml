@@ -29,12 +29,12 @@ concurrency:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    timeout-minutes: 35  # Kill job if it runs longer than 10 minutes
+    timeout-minutes: 350  # Kill job if it runs longer than 10 minutes
       
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      timeout-minutes: 35
+      timeout-minutes: 350
 
     # Create 6-month refresh key for dependency cache invalidation
     - name: Create semi-annual cache key
@@ -69,7 +69,7 @@ jobs:
 
     # Download only the log file from Dropbox
     - name: Download log file from Dropbox
-      timeout-minutes: 35
+      timeout-minutes: 350
       env:
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
@@ -79,7 +79,7 @@ jobs:
 
     # Process Reddit data
     - name: Run Reddit Stash Script
-      timeout-minutes: 35
+      timeout-minutes: 350
       env:
         REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
         REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
@@ -90,7 +90,7 @@ jobs:
 
     # Upload any changed files to Dropbox
     - name: Upload updated data to Dropbox
-      timeout-minutes: 35
+      timeout-minutes: 350
       env:
         DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
