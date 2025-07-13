@@ -29,7 +29,7 @@ concurrency:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    timeout-minutes: 10  # Kill job if it runs longer than 10 minutes
+    timeout-minutes: 25  # Kill job if it runs longer than 10 minutes
       
     steps:
     - name: Checkout repository
